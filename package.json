@@ -6,6 +6,10 @@
     "node": ">=20",
     "npm": ">=10"
   },
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eteurnberg/aoc-2023-ts.git"
+  },
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./build && tsc  --build --verbose ",
