@@ -6,20 +6,25 @@
     "node": ">=20",
     "npm": ">=10"
   },
- "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/eteurnberg/aoc-2023-ts.git"
   },
   "main": "build/index.js",
   "scripts": {
+    "build:dev": "tsc --watch",
     "build": "rimraf ./build && tsc  --build --verbose ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts"
   },
   "author": "Emil Teurnberg",
   "license": "ISC",
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
     "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint": "^8.56.0",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   }
