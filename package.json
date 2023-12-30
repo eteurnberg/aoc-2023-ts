@@ -17,7 +17,8 @@
     "build:dev": "tsc --watch",
     "build": "rimraf ./build && tsc  --build --verbose",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "husky install"
   },
   "author": "Emil Teurnberg",
   "license": "ISC",
@@ -31,9 +32,15 @@
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^13.24.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
     "rimraf": "^5.0.5",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --cache",
+    "*.{js,ts,json,css,md,yml}": "prettier --ignore-path .gitignore --check"
   }
 }
