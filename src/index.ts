@@ -1,11 +1,9 @@
-// src/index.js
-const favoriteFruits = ["apple", "strawberry", "orange"];
+var favoriteFruits = ['apple', 'strawberry', 'orange'];
 
 function addFruit(fruit: string) {
-    favoriteFruits.push(fruit);
+  favoriteFruits.push(fruit);
 }
 
 addFruit('banana');
 
 console.log(`fruits: ${favoriteFruits}`);
-
