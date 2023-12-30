@@ -19,7 +19,14 @@ const compat = new FlatCompat({
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   eslintJs.configs['recommended'],
-  ...compat.extends('plugin:@typescript-eslint/recommended'),
+  ...compat.config({
+    extends: ['plugin:@typescript-eslint/recommended-type-checked'],
+    ignorePatterns: ['build/**', 'node_modules/**', '**/*.js'],
+    parserOptions: {
+      project: true,
+      tsConfigRootDir: __dirname,
+    },
+  }),
   eslintConfigPrettier,
   {
     // global ignores

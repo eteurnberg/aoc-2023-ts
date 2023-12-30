@@ -6,4 +6,4 @@ function addFruit(fruit: string) {
 
 addFruit('banana');
 
-console.log(`fruits: ${favoriteFruits}`);
+console.log(`fruits: ${favoriteFruits.toString()}`);
