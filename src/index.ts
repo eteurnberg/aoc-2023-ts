@@ -1,4 +1,4 @@
-var favoriteFruits = ['apple', 'strawberry', 'orange'];
+const favoriteFruits = ['apple', 'strawberry', 'orange'];
 
 function addFruit(fruit: string) {
   favoriteFruits.push(fruit);

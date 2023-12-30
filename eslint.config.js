@@ -1,11 +1,25 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 import globals from 'globals';
 import typescriptEslintParser from '@typescript-eslint/parser';
 import eslintJs from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import { FlatCompat } from '@eslint/eslintrc';
+
+// mimic CommonJS variables -- not needed if using CommonJS
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname, // optional; default: process.cwd()
+  resolvePluginsRelativeTo: __dirname, // optional
+});
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   eslintJs.configs['recommended'],
+  ...compat.extends('plugin:@typescript-eslint/recommended'),
   eslintConfigPrettier,
   {
     // global ignores
