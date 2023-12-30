@@ -27,6 +27,14 @@ export default [
       tsConfigRootDir: __dirname,
     },
   }),
+  ...compat.config({
+    extends: ['plugin:@typescript-eslint/stylistic-type-checked'],
+    ignorePatterns: ['build/**', 'node_modules/**', '**/*.js'],
+    parserOptions: {
+      project: true,
+      tsConfigRootDir: __dirname,
+    },
+  }),
   eslintConfigPrettier,
   {
     // global ignores
