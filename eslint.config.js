@@ -52,6 +52,9 @@ export default [
         ...globals.nodeBuiltin,
       },
     },
+    rules: {
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    },
   },
   {
     files: ['.eslintrc.{js,cjs}'],
